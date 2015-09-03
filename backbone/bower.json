@@ -1,0 +1,19 @@
+{
+  "name": "todolist",
+  "version": "0.0.0",
+  "authors": [
+    "Ross146 <ross146@mail.ru>"
+  ],
+  "description": "todolist",
+  "main": "index.js",
+  "keywords": [
+    "to",
+    "do",
+    "list"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "materialize": "~0.97.0",
+    "backbone": "~1.2.1"
+  }
+}

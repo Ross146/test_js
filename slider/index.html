@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div id="slider" class="slider">
+    <div id="thumbs" class="thumb"></div>
+  </div>
+
+  <script>
+    var slider = document.getElementById('slider');
+    var thumbs = document.getElementById('thumbs');
+    var sliderCoords = getCoords(slider);
+      thumbs.onmousedown = function(e) {
+       
+        document.onmousemove = function(e) {
+            var newleft = e.pageX - thumbs.offsetWidth/2 - sliderCoords;
+            var widthParent = slider.offsetWidth;
+            console.log(slider.offsetWidth);
+            if(newleft> widthParent){
+                newleft = widthParent                
+            }
+            var leftBorderParent = slider.offsetLeft;
+            if(newleft < 0) {
+                newleft = 0;
+            }
+           thumbs.style.left = newleft + 'px';           
+        };
+
+        document.onmouseup = function() {
+        document.onmousemove = null;
+        thumbs.onmouseup = null;
+        };
+      }
+      thumbs.ondragstart = function() {
+        return false;
+      }
+      function getCoords(elem) {
+        var box = elem.getBoundingClientRect();
+        return box.left + pageXOffset;
+      }
+  </script>
+
+</body>
+
+</html>

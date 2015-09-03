@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>privarJquery</title>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+    <p id="content_p"></p>
+<script>
+$.ajax({
+  url: "https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5",
+  cashe: false,
+    success: function(html) {
+        $('#content_p').html(html);
+    }
+})
+</script>
+</body>
+</html>

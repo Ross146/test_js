@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>backbone_test</title>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
+    <script src="bower_components/backbone/backbone.js"></script>    
+    <script src="bower_components/materialize/dist/js/materialize.js"></script>    
+    <script src="index.js"></script>
+</head>
+<body>
+  <div id='one'></div>
+  
+  
+<!--
+   <script>
+        $(document).ready(function() {
+            $('#one').html('Hello!')
+        });
+    </script> 
+-->
+
+<script type="jst-template" id="todo-tmpl">
+    <%= name %> <%= description %> <%= priority %>
+</script>
+</body>
+</html>

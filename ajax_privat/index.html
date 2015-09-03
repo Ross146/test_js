@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PrivatBank</title>
+</head>
+<body>
+<button id="button" onclick="runPrivat()">run</button>
+    
+        
+            
+                    
+<script>
+    function runPrivat() {
+        var xhr = new XMLHttpRequest();
+//        var param = 'privat.json'
+//        var param1 = 'exchange'+ encodeURIComponent(exchange)+'&coursid'
+        xhr.open('GET', 'https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5', false);
+//        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
+        xhr.send();
+        console.log(xhr.readyState)
+        if(xhr.status !=200) {
+            alert(xhr.status + ': ' + xhr.statusText);
+        } else {
+            alert('good');
+            console.log(xhr.responseText);
+        }
+        button.innerHTML = 'загружаю';
+        button.disabled = true;
+        } 
+   
+        
+    
+</script>
+</body>
+</html>
